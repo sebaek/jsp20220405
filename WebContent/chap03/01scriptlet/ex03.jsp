@@ -20,6 +20,9 @@
 	<p>10</p>
 	<%
 	// p요소 10개 출력
+	for (int i = 1; i <= 10; i++) {
+		out.println("<p>" + i + "</p>");
+	}
 	%>
 </body>
 </html>
