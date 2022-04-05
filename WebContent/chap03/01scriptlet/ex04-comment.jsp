@@ -29,7 +29,9 @@
 	%>
 	
 	<%-- jsp 주석 --%>
-	<!-- ctrl shift slash : html 주석 -->
+<!-- 	ctrl shift slash : html 주석 -->
+<!-- ctrl shift c : html 주석 -->
+
 </body>
 </html>
 
