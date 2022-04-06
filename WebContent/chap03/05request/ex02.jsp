@@ -13,7 +13,7 @@
 <h3>?name=donald&age=30</h3>
 
 <h3>name 파라미터 : <%= request.getParameter("name") %></h3>
-<h3>age 파라미터 : </h3>
+<h3>age 파라미터 : <%= request.getParameter("age") %></h3>
 
 </body>
 </html>
