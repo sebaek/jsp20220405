@@ -42,6 +42,12 @@
 	<input type="submit" />
 </form>
 
+<hr />
+
+<form action="../../chap02/jsp03.jsp">
+	<input type="text" name="name" />
+	<input type="submit" />
+</form>
 </body>
 </html>
 
