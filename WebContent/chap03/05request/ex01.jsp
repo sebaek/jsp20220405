@@ -10,5 +10,19 @@
 <body>
 	<h1>request : javax.servlet.http.HttpServletRequest</h1>
 	
+	<h3>method : <%= request.getMethod() %></h3>
+	<h3>path : <%= request.getRequestURI() %></h3>
+	<h3>host : <%= request.getServerName() %></h3>
+	<h3>port : <%= request.getServerPort() %></h3>
+	<h3>Accept Header : <%= request.getHeader("Accept") %></h3>
+	
 </body>
 </html>
+
+
+
+
+
+
+
+
