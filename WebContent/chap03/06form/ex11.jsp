@@ -18,9 +18,17 @@
 		<option value="minus">-</option>
 		<option value="times">X</option>
 		<option value="divide">/</option>
+		
+		<option value="sum">SUM</option>
 	</select>
 	<input type="text" name="num2"/>
 	<input type="submit" value="계산" />
 </form>
 </body>
 </html>
+
+
+
+
+
+

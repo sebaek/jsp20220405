@@ -37,6 +37,17 @@ case "divide" :
 	result = num1 / num2;
 	message = num1 + " / " + num2 + " = " + result;
 	break;
+case "sum" :
+	int a = (int) num1;
+	int b = (int) num2;
+	
+	int sum = 0;
+	for (int i = a; i <= b; i++) {
+		sum += i;
+	}
+	
+	message = a + "~" + b + "의 정수 합은 " + sum;
+	break;
 default :
 		
 }
