@@ -12,7 +12,7 @@
 <body>
 <h1>post 전송</h1>
 <!-- form>(input+br)*3+button{전송} -->
-<form action="ex20.jsp" method="post">
+<form action="ex20.jsp?address=seoul" method="post">
 	<input type="text" name="movie" value="doctor strange"/>
 	<br />
 	<input type="text" name="age" value="700"/>

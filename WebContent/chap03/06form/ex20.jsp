@@ -14,6 +14,7 @@
 <h1><%= request.getParameter("movie") %></h1>
 <h1><%= request.getParameter("age") %></h1>
 <h1><%= request.getParameter("name") %></h1>
+<h1><%= request.getParameter("address") %></h1>
 
 </body>
 </html>
