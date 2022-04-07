@@ -13,6 +13,8 @@
 <body>
 
 <%-- param 액션 태그의 파라미터는 include 되는 페이지에서만 사용 가능 --%>
+	<!-- html 주석 -->
+	<%-- jsp 주석 --%>
 <jsp:include page="ex16.jsp">
 	<jsp:param value="999" name="age"/>
 </jsp:include>
@@ -29,7 +31,7 @@
 <%
 	String value1 = "너무 큰 값이 들어갈 경우 태그 body로 작성하면 안되고 expression사용";
 %>
-<jsp:include page="ex16.jsp">
+<jsp:include page="ex16.jsp" >
 	<jsp:param name="detail" value="<%= value1 %>"></jsp:param>
 </jsp:include>
 
