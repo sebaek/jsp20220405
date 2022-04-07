@@ -12,14 +12,14 @@
 
 <form action="ex12.jsp">
 	<!-- input+select>option*4^input+input:submit -->
-	<input type="text" />
-	<select name="" id="">
-		<option value="">+</option>
-		<option value="">-</option>
-		<option value="">X</option>
-		<option value="">/</option>
+	<input type="text" name="num1"/>
+	<select name="op" id="">
+		<option value="plus">+</option>
+		<option value="minus">-</option>
+		<option value="times">X</option>
+		<option value="divide">/</option>
 	</select>
-	<input type="text" />
+	<input type="text" name="num2"/>
 	<input type="submit" value="계산" />
 </form>
 </body>
