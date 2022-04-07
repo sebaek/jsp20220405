@@ -21,7 +21,7 @@
 <%-- jsp param 표준액션태그 사용 방법(추천) --%>
 <jsp:include page="ex12.jsp">
 	<jsp:param name="name" value="hello world+한글" />
-	<jsp:param value="90" name="age"/>
+	<jsp:param name="age" value="90"/>
 </jsp:include>
 
 
