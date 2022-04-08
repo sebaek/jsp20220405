@@ -11,6 +11,7 @@ o2.add("hello");
 o2.add("hi");
 
 request.setAttribute("job", o1);
+request.setAttribute("job", "strange");
 request.setAttribute("names", o2);
 %>
 <jsp:forward page="ex06to.jsp" />
