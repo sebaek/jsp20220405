@@ -12,5 +12,34 @@
 </head>
 <body>
 
+<%
+List<String> list = (List<String>) request.getAttribute("names");
+Map<String, String> map = (Map<String, String>) request.getAttribute("movies");
+
+for (String name : list) {
+%>
+	<p><%= name %></p>
+<%
+}
+%>
+
+<%
+for (Map.Entry<String, String> entry : map.entrySet()) {
+%>
+	<p><%= entry.getKey() %> : <%= entry.getValue() %></p>
+<%
+}
+%>
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
