@@ -12,5 +12,25 @@
 </head>
 <body>
 
+<h1>ex04to.jsp </h1>
+
+<%
+String movie = (String) request.getAttribute("movie");
+%>
+
+<%= movie %>
+
+<br />
+
+<%= request.getParameter("age") %>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
