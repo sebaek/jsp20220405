@@ -14,6 +14,6 @@
   	<!-- session 유지시간 기본값: 30분 -->
   	<!-- 마지막 접근 후 유지시간 지나면 session 삭제됨 -->
   	<!-- 단위: 분(minutes) -->
-  	<session-timeout>1</session-timeout>
+  	<session-timeout>30</session-timeout>
   </session-config>
 </web-app>
