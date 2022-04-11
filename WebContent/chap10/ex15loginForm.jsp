@@ -24,11 +24,18 @@
 		out.print("</p>");
 		session.removeAttribute("errorMessage");
 	}
+	
+	// 이전에 작성한 id 활용
+	String id = (String) session.getAttribute("id");
+	session.removeAttribute("id");
+	
+	if (id == null) {
+		id = "";
+	}
 	%>
 	
-	
 	<form action="ex16loginProcess.jsp" method="post">
-		아이디 : <input type="text" name="id" /> <br />
+		아이디 : <input type="text" name="id" value="<%= id %>"/> <br />
 		암호 : <input type="password" name="pw" /> <br />
 		
 		<input type="submit" value="로그인" />
