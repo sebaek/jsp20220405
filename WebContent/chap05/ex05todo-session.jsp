@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>할일 목록</h1>
+	<h1>할일 목록 (session)</h1>
 	
 	<form>
 		할일 : <input type="text" name="todo" /> 

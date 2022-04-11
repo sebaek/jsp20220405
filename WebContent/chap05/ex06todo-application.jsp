@@ -11,6 +11,35 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h1>할일 목록 (application)</h1>
+	
+	<form>
+		할일 : <input type="text" name="todo" /> 
+		<input type="submit" value="추가" />
+	</form>
+	
+	<%
+	List<String> list = (List<String>) application.getAttribute("todoList");
+	if (list == null) {
+		list = new ArrayList<>();
+		application.setAttribute("todoList", list);
+	}
+	
+	String todo = request.getParameter("todo");
+	if (todo != null && !todo.equals("")) {
+		list.add(todo);
+	}
+	%>
+	
+	<ul>
+		<%
+		for (String item : list) {
+			out.print("<li>");
+			out.print(item);
+			out.print("</li>");
+		}
+		%>
+	</ul>
+	
 </body>
 </html>
