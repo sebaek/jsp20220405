@@ -12,7 +12,9 @@
 </head>
 <body>
 	<%
-	session.removeAttribute("id");
+	// session.removeAttribute("id");
+	// session 삭제
+	session.invalidate();
 	%>
 
 	<h1>로그아웃 되었습니다.</h1>
