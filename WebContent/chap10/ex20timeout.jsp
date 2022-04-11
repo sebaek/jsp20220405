@@ -21,7 +21,7 @@
 	String dateFormatted = formatter.format(date);
 	
 	%>
-	<h2>마지막접근: <%= session.getLastAccessedTime() %></h2>
+	<h2>마지막접근: <%= dateFormatted %></h2>
 </body>
 </html>
 
