@@ -22,6 +22,8 @@
 	
 	<p>${car2.model }</p> <%-- volvo --%>
 	<p>${car2.price }</p> <%-- 8000 --%>
+	
+	<p>${message }</p> <%-- hello world --%>
 </body>
 </html>
 
