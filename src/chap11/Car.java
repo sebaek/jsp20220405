@@ -3,6 +3,15 @@ package chap11;
 public class Car {
 	private String model;
 	private int price;
+	private boolean available;
+	
+	public void setAvailable(boolean available) {
+		this.available = available;
+	}
+	
+	public boolean isAvailable() {
+		return available;
+	}
 
 	public String getModel() {
 		return model;

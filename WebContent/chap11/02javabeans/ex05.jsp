@@ -31,9 +31,11 @@
 	
 	<p>${car1.model }</p> <%-- tesla --%>
 	<p>${car1.price }</p> <%-- 7000 --%>
+	<p>${car1.available }</p>
 	
 	<p>${car2.model }</p> <%-- volvo --%>
 	<p>${car2.price }</p> <%-- 8000 --%>
+	<p>${car2.available }</p>
 	
 	<p>${message }</p> <%-- hello world --%>
 </body>
