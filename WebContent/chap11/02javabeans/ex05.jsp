@@ -15,6 +15,18 @@
 	<h1></h1>
 	<%
 	// 적절한 자바 코드 작성
+	Car c1 = new Car();
+	Car c2 = new Car();
+	
+	c1.setModel("tesla");
+	c1.setPrice(7000);
+	
+	c2.setModel("volvo");
+	c2.setPrice(8000);
+	
+	pageContext.setAttribute("car1", c1);
+	pageContext.setAttribute("car2", c2);
+	pageContext.setAttribute("message", "hello world");
 	%>
 	
 	<p>${car1.model }</p> <%-- tesla --%>
