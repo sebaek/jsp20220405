@@ -16,7 +16,10 @@
 	<%
 	Cookie cookie = new Cookie("my-cookie1", "my-value1");
 	
+	Cookie cookie2 = new Cookie("my-cookie2", "my-value2");
+	
 	response.addCookie(cookie);
+	response.addCookie(cookie2);
 	%>
 </body>
 </html>
