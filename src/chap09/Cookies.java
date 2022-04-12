@@ -24,6 +24,10 @@ public class Cookies {
 		}
 	}
 	
+	public Cookie getCookie(String name) {
+		return cookieMap.get(name);
+	}
+	
 	public String getValue(String name) throws IOException {
 		Cookie cookie = cookieMap.get(name);
 		
@@ -42,4 +46,22 @@ public class Cookies {
 	public static Cookie createCookie(String name, String value) throws IOException {
 		return new Cookie(name, URLEncoder.encode(value, "utf-8"));
 	}
+	
+	public static Cookie createCookie(String name, String value, String path, int maxAge) throws IOException {
+		Cookie cookie = new Cookie(name, URLEncoder.encode(value, "utf-8"));
+		cookie.setMaxAge(maxAge);
+		cookie.setPath(path);
+		
+		return cookie;
+	}
 }
+
+
+
+
+
+
+
+
+
+
