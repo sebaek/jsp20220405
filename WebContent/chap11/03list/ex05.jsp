@@ -13,6 +13,15 @@
 <body>
 <%
 // 적절한 코드 작성
+
+List<String> list = new ArrayList<>();
+list.add("spring");
+list.add("summer");
+list.add("fall");
+list.add("winter");
+list.add("blue");
+
+pageContext.setAttribute("myList", list);
 %>
 
 
