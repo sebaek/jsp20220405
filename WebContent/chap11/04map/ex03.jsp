@@ -23,7 +23,11 @@ pageContext.setAttribute("props", map);
 %>
 
 <%-- 아파트, 기아, 손흥민, 스타벅스를 el를 활용해서 출력 하는 코드 작성--%>
-
+<p>${props["my house"] }</p>
+<p>${props["my car"] }</p>
+<p>${props["name"] }</p>
+<p>${props.name }</p>
+<p>${props["커피"] }</p>
 
 
 </body>
