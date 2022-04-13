@@ -15,6 +15,21 @@
 
 <%
 // 코드 작성
+Car c1 = new Car();
+Car c2 = new Car();
+
+List<String> o1 = new ArrayList<>();
+o1.add("park");
+o1.add("son");
+
+c1.setOwners(o1);
+
+List<String> o2 = new ArrayList<>();
+o2.add("cha");
+c2.setOwners(o2);
+
+pageContext.setAttribute("aCar", c1);
+pageContext.setAttribute("bCar", c2);
 %>
 
 <p>${aCar.owners[1] }</p> <%-- son --%>
