@@ -11,6 +11,19 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%
+	// 적절한 코드 작성
+	%>
 
+	<p>${myList[0] }</p> <%-- jimin --%>
+	<p>${myList[1] }</p> <%-- bts --%>
+	<p>${yourList[0] }</p> <%-- 3.14 --%>
+	<p>${yourList[1] }</p> <%-- 9.999 --%>
+	<p>${yourList["2"] }</p> <%-- -0.1 --%>
 </body>
 </html>
+
+
+
+
+
