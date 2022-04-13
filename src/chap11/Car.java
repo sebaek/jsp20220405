@@ -5,6 +5,15 @@ public class Car {
 	private int price;
 	private boolean available;
 	
+	public Car() {
+		
+	}
+	
+	public Car(String model, int price) {
+		this.model = model;
+		this.price = price;
+	}
+	
 	public void setAvailable(boolean available) {
 		this.available = available;
 	}
