@@ -36,6 +36,10 @@ pageContext.setAttribute("list", list);
 <p>${list[0][0] }</p> <%-- winter --%>
 <p>${list[0][1] }</p> <%-- summer --%>
 <p>${list[0][2] }</p> <%-- spring --%>
+
+<p>${list[1][0] }</p>
+<p>${list[1][1] }</p>
+<p>${list[1][2] }</p>
 </body>
 </html>
 
