@@ -20,7 +20,12 @@ pageContext.setAttribute("values", map);
 %>
 
 <%-- tesla, kia, hyundai, latte, espresso, capuccino가 출력되도록 el를 사용해서 코드 작성 --%>
-
+<p>${values.cars[0] }</p>
+<p>${values.cars[1] }</p>
+<p>${values.cars[2] }</p>
+<p>${values.coffee[0] }</p>
+<p>${values.coffee[1] }</p>
+<p>${values.coffee[2] }</p>
 </body>
 </html>
 
