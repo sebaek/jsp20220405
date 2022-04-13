@@ -13,6 +13,18 @@
 <body>
 	<%
 	// 적절한 코드 작성
+	List<String> list1 = new ArrayList<>();
+	List<Double> list2 = new ArrayList<>();
+	
+	list1.add("jimin");
+	list1.add("bts");
+	
+	list2.add(3.14);
+	list2.add(9.999);
+	list2.add(-0.1);
+	
+	pageContext.setAttribute("myList", list1);
+	pageContext.setAttribute("yourList", list2);
 	%>
 
 	<p>${myList[0] }</p> <%-- jimin --%>
