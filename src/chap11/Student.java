@@ -4,9 +4,9 @@ public class Student {
 	private String name;
 	private String gender;
 	private int score;
-	
+
 	public Student() {
-		
+
 	}
 
 	public Student(String name, String gender, int score) {
