@@ -28,7 +28,15 @@ pageContext.setAttribute("yourCars", list2);
 
 <%-- el을 사용해서 모든 model과 price가 출력 되도록 코드 작성 --%>
 
+<p>${myCars[0].model }</p>
+<p>${myCars[0].price }</p>
+<p>${myCars[1].model }</p>
+<p>${myCars[1].price }</p>
 
+<p>${yourCars[0].model }</p>
+<p>${yourCars[0].price }</p>
+<p>${yourCars[1].model }</p>
+<p>${yourCars[1].price }</p>
 </body>
 </html>
 
