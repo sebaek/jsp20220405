@@ -24,11 +24,17 @@ pageContext.setAttribute("beans", map);
 %>
 
 <p>${beans.kia.model }</p> <%-- k5 --%>
+<p>${beans.kia.price }</p>
 <p>${beans.benz.model }</p> <%-- 5 --%>
+<p>${beans.benz.price }</p>
 
 <p>${beans.son.name }</p> <%-- 손흥민 --%>
 <p>${beans.son.gender }</p> <%-- 남 --%>
 <p>${beans.son.score }</p> <%-- 100 --%>
+
+<p>${beans.cha.name }</p>
+<p>${beans.cha.gender }</p>
+<p>${beans.cha.score }</p>
 </body>
 </html>
 
