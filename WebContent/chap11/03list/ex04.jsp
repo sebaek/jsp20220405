@@ -32,6 +32,20 @@ for (int i = 0; i < list.size(); i++) {
 
 %>
 
+
+<hr />
+
+<%
+for (String item : list) {
+	pageContext.setAttribute("elem", item);
+	
+%>
+	<p>${elem }</p>
+<%
+}
+
+%>
+
 </body>
 </html>
 
