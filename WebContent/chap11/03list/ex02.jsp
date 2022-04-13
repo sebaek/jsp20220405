@@ -11,48 +11,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>attribute 가 List 일 때...</h1>
-	
-	<%
-	
-	List<String> list = new ArrayList<>();
-	list.add("hello");
-	list.add("doctor");
-	
-	pageContext.setAttribute("list1", list);
-	
-	%>
-	
-	<%
-	List<String> l = (List<String>) pageContext.getAttribute("list1");
-	
-	%>
-	
-	<p><%= l.get(0) %></p>
-	<p><%= l.get(1) %></p>
-	
-	<hr />
-	
-	<p>${list1[0] }</p>
-	<p>${list1[1] }</p>
-	
-	<hr />
-	<p>${list1["0"] }</p>
-	<p>${list1["1"] }</p>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
