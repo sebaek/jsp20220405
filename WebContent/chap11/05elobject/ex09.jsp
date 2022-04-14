@@ -12,21 +12,23 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h1>cookie el 객체 : Map&lt;String, Cookie&gt; 타입</h1>
+	<%
+	Cookie cookie = new Cookie("cookie1", "value1");
+	Cookie cookie2 = new Cookie("my-cookie", "value2");
+	
+	response.addCookie(cookie);
+	response.addCookie(cookie2);
+	%>
 
-<h1>이름 : ${param.name }</h1>
-<h1>주소 : ${param.address }</h1>
-<h1>좋아하는 음식</h1>
-<p>${paramValues.food[0] }</p>
-<p>${paramValues["food"][1] }</p>
-<p>${paramValues["food"][2] }</p>
-<hr />
-<p>${param.food }</p>
-
+	<hr />
+	<p>${cookie.cookie1.name }</p>
+	<p>${cookie.cookie1.value }</p>
+	
+	<p>${cookie["my-cookie"].name }</p>
+	<p>${cookie["my-cookie"].value }</p>
 </body>
 </html>
-
-
-
 
 
 
