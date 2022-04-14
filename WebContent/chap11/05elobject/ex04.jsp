@@ -12,8 +12,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="ex03.jsp">
-		<%-- 적절한 코드 작성해서 ex03에 spring, hello@gmail.com, butter --%>
+	<form action="ex03.jsp" method="post">
+		<%-- 적절한 코드 작성해서 ex03에 spring, hello@gmail.com, butter 출력되도록 --%>
+		
+		<input type="text" name="season" value="spring" />
+		<input type="text" name="email" value="hello@gmail.com"/>
+		<input type="text" name="song" value="butter"/>
+		
+		
+		<input type="submit" value="전송" />
 	</form>
 </body>
 </html>
