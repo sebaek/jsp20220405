@@ -12,20 +12,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="ex06.jsp">
-		수1 <input type="text" name="number1" /> <br />
-		수2 <input type="text" name="number2" /> <br />
-		
-		<input type="submit" value="계산" />
-	</form>
+	<p>${param.number1 }, ${param.number2 }</p>
+	<p>더하기 : ${param.number1 + param.number2 }</p>
+	<p>빼기 : ${param.number1 - param.number2 }</p>
+	<p>곱하기 : ${param.number1 * param.number2 }</p>
+	<p>나누기 : ${param.number1 / param.number2 }</p>
+	<p>나누기 : ${param.number1 div param.number2 }</p>
+	<p>나머지 : ${param.number1 % param.number2 }</p>
+	<p>나머지 : ${param.number1 mod param.number2 }</p>
 	
-	<%-- 계산 버튼 누르면 ex06.jsp에서 두 수의 
-	     산술연산(+,-,*,/,%) 결과를 el 사용해서 출력
-	     hint : el param (map 객체) 사용 --%>
 </body>
 </html>
-
-
 
 
 
