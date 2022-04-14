@@ -13,9 +13,17 @@
 </head>
 <body>
 	<%-- 주소창에 적절한 쿼리스트링을 작성 --%>
+	<%-- ?season=spring&email=hello@gmail.com&song=butter --%>
 	<p>${param.season }</p> <%-- spring --%>
 	<p>${param.email }</p> <%-- hello@gmail.com --%>
 	<p>${param.song }</p> <%-- butter --%>
 
 </body>
 </html>
+
+
+
+
+
+
+
