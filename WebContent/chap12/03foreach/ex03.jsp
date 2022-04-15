@@ -13,17 +13,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>구구단 3단 출력</h1>
-	<%-- c:forEach 사용 --%>
+	<form>
+		구구단 <input type="number" name="dan" /> 단
+		<input type="submit" value="출력" />
+	</form>
 	
-	<c:forEach begin="1" end="9" var="i">
-		<p>3 X ${i } = ${3 * i }</p>
-	</c:forEach>
+	<%-- 입력단 dan 파라미터 사용해서 구구단 출력 --%>
+	<%-- dan 이 2 ~ 9 아니면 "적절한 단을 입력해주세요" 출력 --%>
 </body>
 </html>
-
-
-
 
 
 
