@@ -9,10 +9,15 @@
 
 String model = request.getParameter("model");
 String priceStr = request.getParameter("price");
+String availabe = request.getParameter("available");
 
 int price = Integer.parseInt(priceStr);
 
 Car car = new Car(model, price);
+
+if (availabe != null && availabe.equals("true")) {
+	car.setAvailable(true);
+}
 
 // car를 database에 저장해야하는데 
 // application에 저장하는 걸로 대체..

@@ -17,6 +17,7 @@
 	<form action="ex19carProcess.jsp" method="post">
 		모델명 : <input type="text" name="model" /> <br />
 		가격 : <input type="number" name="price" id="" /> <br />
+		사용가능 : <input type="checkbox" name="available" value="true" /> <br />
 		<input type="submit" value="등록" />
 	</form>
 	
@@ -34,6 +35,7 @@
 					<th>#</th>
 					<th>모델</th>
 					<th>가격</th>
+					<th>가능여부</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -42,6 +44,7 @@
 						<td>${status.count }</td>
 						<td>${car.model }</td>
 						<td>${car.price }</td>
+						<td>${car.available }</td>
 					</tr>
 				</c:forEach>
 			</tbody>
