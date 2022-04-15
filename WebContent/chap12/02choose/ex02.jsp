@@ -27,6 +27,20 @@
 	<%-- 4세이상이면 "토이스토리" --%>
 	<%-- 나머지는 "적절한 나이를 입력해주세요" --%>
 	
+	<c:choose>
+		<c:when test="${param.age >= 20 }">
+			<h1>데드풀 추천</h1>
+		</c:when>
+		<c:when test="${param.age >= 12 }">
+			<h1>어벤져스 추천</h1>
+		</c:when>
+		<c:when test="${param.age >= 4 }">
+			<h1>토이스토리 추천</h1>
+		</c:when>
+		<c:otherwise>
+			<h1 class="text-warning">적절한 나이를 입력해주세요.</h1>
+		</c:otherwise>
+	</c:choose>
 </body>
 </html>
 
