@@ -21,7 +21,11 @@
 	map.put("lunch", "pizza");
 	
 	%>
+	<%-- 
+	foreach 사용해서 아래와 같은 테이블 완성
+	단, 순서는 같지 않아도 됨
 	
+	 --%>
 	<hr />
 	
 	<!-- table.table>thead>tr>th*2^^tbody>tr*4>td*2 -->
