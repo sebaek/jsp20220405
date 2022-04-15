@@ -20,12 +20,35 @@
 	map.put("book", "sql");
 	map.put("lunch", "pizza");
 	
+	pageContext.setAttribute("entries", map);
 	%>
 	<%-- 
 	foreach 사용해서 아래와 같은 테이블 완성
 	단, 순서는 같지 않아도 됨
 	
 	 --%>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>키</th>
+				<th>값</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<c:forEach items="${entries }" var="entry">
+				<tr>
+					<td>
+						${entry.key }
+					</td>
+					<td>
+						${entry.value }
+					</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+	 
 	<hr />
 	
 	<!-- table.table>thead>tr>th*2^^tbody>tr*4>td*2 -->
