@@ -22,7 +22,7 @@
 	
 	<hr />
 	
-	<c:if test="${empty application.cars }" var="emptyCars">
+	<c:if test="${empty applicationScope.cars }" var="emptyCars">
 		<p class="text-warning">등록된 차가 없습니다.</p>
 	</c:if>
 	
@@ -37,7 +37,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${application.cars }" var="car" varStatus="status">
+				<c:forEach items="${applicationScope.cars }" var="car" varStatus="status">
 					<tr>
 						<td>${status.count }</td>
 						<td>${car.model }</td>

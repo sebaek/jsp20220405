@@ -20,6 +20,7 @@ Car car = new Car(model, price);
 List<Car> cars = (List<Car>) application.getAttribute("cars");
 if (cars == null) {
 	cars = new ArrayList<>();
+	application.setAttribute("cars", cars);
 }
 
 cars.add(car);
