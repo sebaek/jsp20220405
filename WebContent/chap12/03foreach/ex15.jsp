@@ -13,6 +13,37 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%
+	String[] names = {"captain", "ironman", "spider", "superman", "bat", "widow", "thor"};
+	
+	pageContext.setAttribute("names", names);
+	%>
+	
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>이름</th>
+			</tr>
+		</thead>
 
+		<tbody>
+			<c:forEach items="${names }" var="name" begin="3" end="6" varStatus="status">
+				<tr>
+					<td>${status.count }</td>
+					<td>${name }</td>
+				</tr>
+			</c:forEach>
+		</tbody>	
+	</table>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
