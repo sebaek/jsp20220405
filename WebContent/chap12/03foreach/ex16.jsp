@@ -19,7 +19,12 @@
 	%>
 	
 	<%-- foreach 사용하여 아래 p요소 처럼 출력하는 코드 작성 --%>
-	
+	<p>
+		<c:forEach items="${seasons }" var="item" varStatus="status">
+			${item }<c:if test="${not status.last }">,
+			</c:if>
+		</c:forEach>
+	</p>
 	<p>spring, summer, fall, winter</p>
 </body>
 </html>
