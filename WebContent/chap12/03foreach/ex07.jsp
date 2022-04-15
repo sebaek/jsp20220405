@@ -17,7 +17,16 @@
 	<%
 	String[] list = {"deadpool", "logan", "captain", "ironman", "blackpanther"};
 	
+	pageContext.setAttribute("movies", list);
 	%>
+	
+	<ul>
+		<c:forEach items="${movies }" var="movie">
+			<li>${movie }</li>
+		</c:forEach>
+	</ul>
+	
+	<hr />
 	
 	<ul>
 		<li>deadpool</li>
