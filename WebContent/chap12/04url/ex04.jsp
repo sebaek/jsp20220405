@@ -15,5 +15,19 @@
 </head>
 <body>
 
+	<%-- ifEx02Url : http://localhost:8080/jsp20220405/chap12/01if/ex02.jsp?num1=99&num2=88 --%>
+	<a href="${ifEx02Url }">01if 폴더 ex02.jsp로 이동</a>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
