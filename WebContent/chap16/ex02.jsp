@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags/my1"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
@@ -16,5 +17,16 @@
 <body>
 	<my:mytag2></my:mytag2>
 	<%-- <div>hello</div> --%>
+	
+	<hr />
+	<my:mytag2></my:mytag2>
 </body>
 </html>
+
+
+
+
+
+
+
+
