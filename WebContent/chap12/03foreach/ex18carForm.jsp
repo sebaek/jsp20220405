@@ -71,7 +71,7 @@
 						<td>${car.available }</td>
 						<td>
 							<c:forEach items="${car.owners }" var="owner" varStatus="status">
-								${owner } 
+								<c:out value="${owner }" /> 
 								<c:if test="${not status.last }">
 									,
 								</c:if>
