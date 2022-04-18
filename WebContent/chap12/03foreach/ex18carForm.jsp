@@ -66,7 +66,7 @@
 					<tr>
 						<td><a href="${deleteUrl }"><i class="fa-solid fa-trash-can"></i></a></td>
 						<td>${status.count }</td>
-						<td>${car.model }</td>
+						<td><c:out value="${car.model }" /></td>
 						<td>${car.price }</td>
 						<td>${car.available }</td>
 						<td>
