@@ -19,6 +19,12 @@
 	<%-- num1과 num2를 더한 결과가 출력되도록 mytag4.tag를 완성하세요. --%>
 	
 	<my:mytag4 num1="9" num2="8"></my:mytag4>
+	
+	<my:mytag4 num1="10"></my:mytag4>
+	
+	<c:if test="true">
+		<div>hello</div>
+	</c:if>
 </body>
 </html>
 
