@@ -17,6 +17,14 @@
 
 	<h1>구구단 2단 ~ 9단 출력</h1>
 	
+	<c:forEach begin="2" end="9" var="dan">
+		<h2>${dan }단</h2>
+		<c:forEach begin="1" end="9" var="i">
+			<p>${dan} X ${i } = ${dan * i }</p>
+		</c:forEach>
+	</c:forEach>
+	
+	<h1>구구단 9단 ~ 2단 출력 </h1>
 	
 </body>
 </html>
