@@ -15,8 +15,22 @@
 </head>
 <body>
 
+	<%-- 절대경로 --%>
+	<c:url value="/chap12/01if/ex02.jsp" var="ifEx02Url">
+		<c:param name="num1" value="99"></c:param>
+		<c:param name="num2" value="88"></c:param>
+	</c:url>
+	
+	<c:url value="../01if/ex02.jsp" var="ifEx02Url2">
+		<c:param name="num1" value="9"></c:param>
+		<c:param name="num2" value="8"></c:param>
+	</c:url>
+	
+
 	<%-- ifEx02Url : http://localhost:8080/jsp20220405/chap12/01if/ex02.jsp?num1=99&num2=88 --%>
 	<a href="${ifEx02Url }">01if 폴더 ex02.jsp로 이동</a>
+	<br />
+	<a href="${ifEx02Url2 }">01if 폴더 ex02.jsp로 이동</a>
 </body>
 </html>
 
