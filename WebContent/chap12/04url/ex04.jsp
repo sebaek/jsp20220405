@@ -18,7 +18,7 @@
 	<%-- 절대경로 --%>
 	<c:url value="/chap12/01if/ex02.jsp" var="ifEx02Url">
 		<c:param name="num1" value="99"></c:param>
-		<c:param name="num2" value="88"></c:param>
+		<c:param name="num2">88</c:param>
 	</c:url>
 	
 	<c:url value="../01if/ex02.jsp" var="ifEx02Url2">
