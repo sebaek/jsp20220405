@@ -1,4 +1,4 @@
-package chap17.servlet2;
+package chap17.servlet3;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class S2Servlet03
+ * Servlet implementation class S3Servlet01
  */
-@WebServlet("/S2Servlet03")
-public class S2Servlet03 extends HttpServlet {
+//@WebServlet("/S3Servlet01")
+public class S3Servlet01 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public S2Servlet03() {
+    public S3Servlet01() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,45 +26,17 @@ public class S2Servlet03 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		System.out.println("s3 servlet03 두겟 메소드 실행");
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		
-		String email = request.getParameter("email");
-		String address = request.getParameter("address");
-		String ageStr = request.getParameter("age");
-		
-		System.out.println(email);
-		System.out.println(address);
-		System.out.println(ageStr);
-		
-		// WebContent/chap17/ex06.jsp를 만들고
-		// form 요소를 적절히 작성하고
-		// submit버튼 누르면
-		// 이 doPost메소드가 실행되도록 해보세요.
-		
-		
-		
-		
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
