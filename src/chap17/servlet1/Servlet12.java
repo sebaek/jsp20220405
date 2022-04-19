@@ -38,6 +38,9 @@ public class Servlet12 extends HttpServlet {
 		list.add(new Car("kia", 1500));
 		
 		// set attribute 코드 작성
+		request.setAttribute("cars", list);
+		// ex05.jsp 작성해서 Car 들이 table로 출력되도도록 하세요~~
+		
 		
 		String view = "/WEB-INF/view/chap17/ex05.jsp";
 		
