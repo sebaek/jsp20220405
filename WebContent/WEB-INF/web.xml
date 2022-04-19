@@ -81,6 +81,20 @@
   	<servlet-name>S3Servlet05</servlet-name>
   	<url-pattern>/s3/servlet05</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>S3Servlet06</servlet-name>
+  	<servlet-class>chap17.servlet3.S3Servlet06</servlet-class>
+  	<init-param>
+  		<param-name>viewName</param-name>
+  		<param-value>/WEB-INF/view/chap17/ex06.jsp</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>S3Servlet06</servlet-name>
+  	<url-pattern>/s3/servlet06</url-pattern>
+  </servlet-mapping>
 </web-app>
 
 
