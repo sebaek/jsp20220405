@@ -52,6 +52,17 @@
   	<servlet-name>S3Servlet03</servlet-name>
   	<url-pattern>/s3/servlet03</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>S3Servlet04</servlet-name>
+  	<servlet-class>chap17.servlet3.S3Servlet04</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>S3Servlet04</servlet-name>
+	<url-pattern>/s3/servlet04</url-pattern>
+  </servlet-mapping>
 </web-app>
 
 
