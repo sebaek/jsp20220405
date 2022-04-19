@@ -63,6 +63,24 @@
   	<servlet-name>S3Servlet04</servlet-name>
 	<url-pattern>/s3/servlet04</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>S3Servlet05</servlet-name>
+  	<servlet-class>chap17.servlet3.S3Servlet05</servlet-class>
+  	<init-param>
+  		<param-name>param1</param-name>
+  		<param-value>value1</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>dbUrl</param-name>
+  		<param-value>awsMariaDbAddress</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>S3Servlet05</servlet-name>
+  	<url-pattern>/s3/servlet05</url-pattern>
+  </servlet-mapping>
 </web-app>
 
 
