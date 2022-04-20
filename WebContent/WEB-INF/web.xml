@@ -148,7 +148,14 @@
   	<url-pattern>/s3/servlet06</url-pattern>
   </filter-mapping>
   
-  
+  <filter>
+  	<filter-name>filter03</filter-name>
+  	<filter-class>chap19.Filter03</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>filter03</filter-name>
+	<url-pattern>/s3/*</url-pattern>
+  </filter-mapping>
 </web-app>
 
 
