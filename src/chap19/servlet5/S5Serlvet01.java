@@ -34,7 +34,6 @@ public class S5Serlvet01 extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
 		
 		String name = request.getParameter("name");
 		String address = request.getParameter("address");
