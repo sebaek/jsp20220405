@@ -167,6 +167,14 @@
   	<url-pattern>/s5/*</url-pattern>
   </filter-mapping>
   
+  <filter>
+  	<filter-name>filter05</filter-name>
+  	<filter-class>chap19.Filter05</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>filter05</filter-name>
+  	<url-pattern>/s5/memberOnly</url-pattern>
+  </filter-mapping>
 </web-app>
 
 
