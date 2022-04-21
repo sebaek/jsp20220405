@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -36,13 +38,14 @@ public class S14Servlet01 extends HttpServlet {
 			throws ServletException, IOException {
 
 		ServletContext application = getServletContext();
+		List<String> cities = new ArrayList<>();
 
 		// database에서 records 가져오기
-		// 1. 연결설정
 		DataSource ds = (DataSource) application.getAttribute("dbpool");
 
 		String sql = "SELECT city FROM Customers";
 		try (
+				// 1. 연결설정
 				Connection con = ds.getConnection();
 				// 2. statement 객체 생성
 				Statement stmt = con.createStatement();
@@ -52,7 +55,8 @@ public class S14Servlet01 extends HttpServlet {
 			// 4. 실행결과 정제
 			while (rs.next()) {
 				String city = rs.getString(1);
-				System.out.println(city);
+//				System.out.println(city);
+				cities.add(city);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -71,7 +75,7 @@ public class S14Servlet01 extends HttpServlet {
 		*/
 
 		// request에 records 넣기
-//		request.setAttribute("cities", cities);
+		request.setAttribute("cities", cities);
 
 		// jsp로 forward
 		String location = "/WEB-INF/view/chap14/ex01.jsp";
