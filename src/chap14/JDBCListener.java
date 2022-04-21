@@ -1,5 +1,10 @@
 package chap14;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
@@ -28,9 +33,19 @@ public class JDBCListener implements ServletContextListener {
 	/**
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
-    public void contextInitialized(ServletContextEvent sce)  { 
+    public void contextInitialized(ServletContextEvent sce)  {
+    	ServletContext application = sce.getServletContext();
     	String jdbcInfoFilePath = "/WEB-INF/props/jdbc.properties";
+    	InputStream propsFile = application.getResourceAsStream(jdbcInfoFilePath);
     	
+    	Properties props = new Properties();
+    	try {
+			props.load(propsFile);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    	
+    	System.out.println(props);
     	
     }
 	
