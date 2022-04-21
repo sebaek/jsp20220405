@@ -1,8 +1,7 @@
 package chap14;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Connection;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,10 +30,26 @@ public class S14Servlet01 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		// database에서 records 가져오기
+		// 1. 연결설정
+		String host = "3.38.191.246";
+		String schema = "w3shools";
+		String id = "root";
+		String pw = "ZHeTAUjkPTo0";
+		
+		Connection con = null;
+		
+		// 2. statement 객체 생성
+		// 3. 쿼리 실행
+		// 4. 실행결과 정제
+		// 5. 자원닫기
+		
+		
+		/*
 		List<String> cities = new ArrayList<>();
 		cities.add("Berlin");
 		cities.add("London");
 		cities.add("Madrid");
+		*/
 		
 		// request에 records 넣기
 		request.setAttribute("cities", cities);
