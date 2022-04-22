@@ -33,5 +33,7 @@ SELECT FirstName, LastName, BirthDate FROM Employees WHERE EmployeeID = 1;
 
 DESC Employees;
 
+SELECT CustomerName, City, Country, PostalCode FROM Customers;
+
 
 
