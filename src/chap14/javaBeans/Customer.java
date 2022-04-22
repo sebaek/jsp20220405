@@ -4,6 +4,15 @@ public class Customer {
 	private String name;
 	private String city;
 	private String country;
+	private String postCode;
+
+	public String getPostCode() {
+		return postCode;
+	}
+
+	public void setPostCode(String postCode) {
+		this.postCode = postCode;
+	}
 
 	public String getName() {
 		return name;
