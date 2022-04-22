@@ -35,5 +35,6 @@ DESC Employees;
 
 SELECT CustomerName, City, Country, PostalCode FROM Customers;
 
-
+-- city=' OR '1'='1
+SELECT CustomerName, City, Country FROM Customers WHERE City = '' OR '1'='1';
 
