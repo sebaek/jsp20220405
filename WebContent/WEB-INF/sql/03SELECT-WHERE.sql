@@ -27,7 +27,8 @@ SELECT * FROM Customers WHERE Country = Germany; -- 문자형식은 작은 따�
 -- 예제4 ) 1번고객의 이름 조회
 SELECT CustomerName FROM Customers WHERE CustomerID = 1;
 
-SELECT CustomerName, Address, City, PostalCode, Country FROM Customers WHERE CustomerID = 1;
+SELECT CustomerName, Country, City FROM Customers WHERE CustomerID = 1;
+
 
 
 
