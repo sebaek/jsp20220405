@@ -29,6 +29,9 @@ SELECT CustomerName FROM Customers WHERE CustomerID = 1;
 
 SELECT CustomerName, Country, City FROM Customers WHERE CustomerID = 1;
 
+SELECT FirstName, LastName, BirthDate FROM Employees WHERE EmployeeID = 1;
+
+DESC Employees;
 
 
 
