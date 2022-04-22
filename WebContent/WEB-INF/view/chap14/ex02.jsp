@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>${name }이 사는 나라는 ${country }입니다.</h1>
+	<h1>${name }이 사는 나라는 ${country } 이고 도시는 ${city }입니다.</h1>
 </body>
 </html>
 
