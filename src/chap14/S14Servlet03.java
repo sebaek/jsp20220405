@@ -32,7 +32,7 @@ public class S14Servlet03 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String sql = "SELECT CustomerName, Country FROM Customers WHERE CustomerID = 1";
+		String sql = "SELECT CustomerName, Country, City FROM Customers WHERE CustomerID = 1";
 		
 		ServletContext application = getServletContext();
 		DataSource ds = (DataSource) application.getAttribute("dbpool");
@@ -44,12 +44,14 @@ public class S14Servlet03 extends HttpServlet {
 			if (rs.next()) {
 				String name = rs.getString(1);
 				String country = rs.getString(2);
+				String city = rs.getString(3);
 				
 //				System.out.println(name);
 //				System.out.println(country);
 				
 				request.setAttribute("name", name);
 				request.setAttribute("country", country);
+				request.setAttribute("city", city);
 			}
 			
 		} catch (Exception e) {
