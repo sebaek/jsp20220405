@@ -13,6 +13,8 @@
 </head>
 <body>
 	<h1>${customer.name }은 ${customer.country }, ${customer.city }에 삽니다.</h1>
+	
+	<h2>우편번호 : ${customer.postCode }</h2>
 </body>
 </html>
 
