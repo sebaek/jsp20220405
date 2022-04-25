@@ -15,4 +15,10 @@ SELECT * FROM Customers ORDER BY Country ASC, City ASC;
 SELECT * FROM Customers ORDER BY Country DESC, City;
 
 -- 연습1 ) 직원(Employees)을 생일 내림차순, LastName 오름차순 정렬로 조회
+SELECT * FROM Employees ORDER BY BirthDate DESC, LastName;
+-- 연습2 ) 고객이 있는 나라를 오름차순 정렬로 조회 (단 한번씩만 결과로 나오도록)
+SELECT DISTINCT Country FROM Customers ORDER BY Country;
+-- 연습3 ) 고객이 있는 도시를 오름차순 정렬로 조회 (단 한번씩만 결과로 나오도록)
+SELECT DISTINCT City FROM Customers ORDER BY City;
+
 
