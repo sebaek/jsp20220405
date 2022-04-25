@@ -16,12 +16,12 @@
 
 	<h1>새 직원 등록</h1>
 	
-	<c:if test="${not empty success }">
-		<c:if test="${success }" >
+	<c:if test="${not empty param.success }">
+		<c:if test="${param.success }" >
 			<p class="text-success">입력 성공</p>
 		</c:if>
 		
-		<c:if test="${not success }">
+		<c:if test="${not param.success }">
 			<p class="text-danger">입력 실패</p>
 		</c:if>
 	</c:if>
