@@ -7,3 +7,9 @@ SELECT * FROM Customers WHERE Country = 'Brazil' AND City = 'Rio de Janeiro';
 SELECT * FROM Customers WHERE Country = 'Germany' OR City = 'London';
 
 SELECT * FROM Customers WHERE NOT Country = 'Germany';
+
+SELECT * FROM Customers WHERE 1 = 1;
+SELECT * FROM Customers WHERE Country = 'Germany' OR 1 = 1;
+
+-- 나라명 ' OR '1' = '1
+SELECT * FROM Customers WHERE Country = '' OR '1' = '1';
