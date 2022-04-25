@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="">
+	<form action="S14Servlet13">
 	나라 : <select name="" id="">
 		<c:forEach items="${countryList }" var="country">
 			<option value="${country }">${country }</option>
