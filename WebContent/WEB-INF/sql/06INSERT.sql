@@ -28,3 +28,15 @@ SELECT * FROM Employees ORDER BY EmployeeID DESC;
 DESC Employees;
 INSERT INTO Employees (LastName, FirstName, BirthDate, Photo, Notes)
 VALUES ('Jisung', 'Park', '1999-01-01', 'pic1', 'manchester united');
+
+-- 모든 컬럼을 나열하지 않아도됨
+INSERT INTO Employees (LastName, FirstName, BirthDate, Notes)
+VALUES ('Lee', 'sunshin', '1900-01-01', 'general'); -- 열을 생략하면 null로 남게됨
+
+-- NULL : 값이 없다
+-- insert시 null 명시 가능
+INSERT INTO Employees (LastName, FirstName, BirthDate, Photo, Notes)
+VALUES ('Harry', 'Kane', '2000-01-01', NULL, 'soccer');
+
+
+
