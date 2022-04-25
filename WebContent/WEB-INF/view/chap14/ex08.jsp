@@ -12,6 +12,19 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<div>
+		<c:if test="${not empty param.success }">
+			<c:if test="${param.success }">
+				<p class="text-sucess">입력 성공</p>
+			</c:if>
+			
+			<c:if test="${not param.success }">
+				<p class="text-danger">입력 실패</p>
+			</c:if>
+		</c:if>
+	</div>
+
 	<form action="" method="post">
 		고객명 : <input type="text" name="customerName" /> <br />
 		계약명 : <input type="text" name="contactName" /> <br />

@@ -2,6 +2,7 @@ package chap14;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -79,8 +80,58 @@ public class S14Servlet14 extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String sql = "INSERT INTO Customers "
+				+ "(CustomerName, ContactName, Address, City, PostalCode, Country) "
+				+ "VALUES "
+				+ "(?, ?, ?, ?, ?, ?)";
+		
+		ServletContext application = getServletContext();
+		DataSource ds = (DataSource) application.getAttribute("dbpool");
+		int result = 0;
+		
+		try (Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
+			
+			String customerName = request.getParameter("customerName");
+			String contactName = request.getParameter("contactName");
+			String address = request.getParameter("address");
+			String city = request.getParameter("city");
+			String postalCode = request.getParameter("postalCode");
+			String country = request.getParameter("country");
+			
+			pstmt.setString(1, customerName);
+			pstmt.setString(2, contactName);
+			pstmt.setString(3, address);
+			pstmt.setString(4, city);
+			pstmt.setString(5, postalCode);
+			pstmt.setString(6, country);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		String path = "S14Servlet14";
+		
+		if (result == 1) {
+			// insert 성공
+			path += "?success=true";
+		} else {
+			path += "?success=false";
+		}
+		
+		response.sendRedirect(path);
+		
 	}
 
 }
+
+
+
+
+
+
+
+
+
