@@ -21,4 +21,8 @@ SELECT DISTINCT Country FROM Customers ORDER BY Country;
 -- 연습3 ) 고객이 있는 도시를 오름차순 정렬로 조회 (단 한번씩만 결과로 나오도록)
 SELECT DISTINCT City FROM Customers ORDER BY City;
 
+-- 컬럼번호로 정렬
+SELECT * FROM Customers ORDER BY 5;
+SELECT CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country FROM Customers ORDER BY 3;
+SELECT CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country FROM Customers ORDER BY 7, 5;
 
