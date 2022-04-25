@@ -1,11 +1,16 @@
 package chap14;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
 
 /**
  * Servlet implementation class S14Servlet15
@@ -35,8 +40,51 @@ public class S14Servlet15 extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String sql = "INSERT INTO Employees (LastName, FirstName, BirthDate, Photo, Notes) "
+				+ "VALUES (?, ?, ?, ?, ?)";
+		
+		String lastName = request.getParameter("lastName");
+		String firstName = request.getParameter("firstName");
+		String birthDate = request.getParameter("birthDate");
+		String photo = request.getParameter("pic");
+		String notes = request.getParameter("notes");
+		
+		ServletContext application = getServletContext();
+		DataSource ds = (DataSource) application.getAttribute("dbpool");
+		
+		int result = 0;
+		try (Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
+			pstmt.setString(1, lastName);
+			pstmt.setString(2, firstName);
+			pstmt.setString(3, birthDate);
+			pstmt.setString(4, photo);
+			pstmt.setString(5, notes);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		String location = "S14Servlet15";
+		if (result == 1) {
+			location += "?success=true";
+		} else {
+			location += "?success=false";
+		}
+		
+		response.sendRedirect(location);
 	}
 
 }
+
+
+
+
+
+
+
+
+
+

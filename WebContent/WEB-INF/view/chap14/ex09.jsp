@@ -16,6 +16,16 @@
 
 	<h1>새 직원 등록</h1>
 	
+	<c:if test="${not empty success }">
+		<c:if test="${success }" >
+			<p class="text-success">입력 성공</p>
+		</c:if>
+		
+		<c:if test="${not success }">
+			<p class="text-danger">입력 실패</p>
+		</c:if>
+	</c:if>
+	
 	<form method="post">
 		Last Name : <input type="text" name="lastName"/> <br />
 		First Name : <input type="text" name="firstName" /> <br />
