@@ -13,44 +13,19 @@
 </head>
 <body>
 
-	<div>
-		<c:if test="${not empty param.success }">
-			<c:if test="${param.success }">
-				<p class="text-success">입력 성공</p>
-			</c:if>
-			
-			<c:if test="${not param.success }">
-				<p class="text-danger">입력 실패</p>
-			</c:if>
-		</c:if>
-	</div>
 
-	<form action="" method="post">
-		고객명 : <input type="text" name="customerName" /> <br />
-		계약명 : <input type="text" name="contactName" /> <br />
-		주소 : <input type="text" name="address" /> <br />
-		도시 : 
-			<select name="city" id="">
-				<c:forEach items="${cityList }" var="city">
-					<option value="${city }">${city }</option>
-				</c:forEach>
-			</select>
-		
-		 <br />
-		우편번호 : <input type="text" name="postalCode"/> <br />
-		나라 : 
-			<select name="country" id="">
-				<c:forEach items="${countryList }" var="country">
-					<option value="${country }">${country }</option>
-				</c:forEach>
-			</select>
-		 <br />
+	<h1>새 직원 등록</h1>
+	
+	<form method="post">
+		Last Name : <input type="text" name="lastName"/> <br />
+		First Name : <input type="text" name="firstName" /> <br />
+		Birth Date : <input type="date" name="birthDate"/> <br />
+		Picture : <input type="text" name="pic" value="pic01" /> <br />
+		Notes : <textarea name="notes"></textarea> <br />
 		<input type="submit" value="등록" />
 	</form>
 </body>
 </html>
-
-
 
 
 
