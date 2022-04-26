@@ -2,6 +2,7 @@ package chap14;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -79,20 +80,26 @@ public class S14Servlet17 extends HttpServlet {
 			throws ServletException, IOException {
 
 		String id = request.getParameter("id");
-		
-		System.out.println(id + "번 직원 지우는 코드를 작성하세요~~");
-		
+
+		String sql = "DELETE FROM Employees "
+				+ "WHERE EmployeeID = ? ";
+		ServletContext application = getServletContext();
+		DataSource ds = (DataSource) application.getAttribute("dbpool");
+
+		try (Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql);) {
+
+			pstmt.setInt(1, Integer.parseInt(id));
+
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		String location = "S14Servlet17";
 		response.sendRedirect(location);
-		
+
 	}
 
 }
-
-
-
-
-
-
-
-
