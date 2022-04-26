@@ -8,7 +8,7 @@ DESC Employees;
 UPDATE Employees
 SET LastName = 'Sunja',
     FirstName = 'YuhJung'
-WHERE EmployeeID = 1;
+WHERE EmployeeID = '1';
 
 -- 예제1) 1번 고객(Customers Table)의 
 -- 계약자명(ContactName)은 'Alfred Schmidt'
@@ -32,7 +32,9 @@ UPDATE Products
 SET Price = Price + 2;
 
 
-
+SELECT 1 = 1; -- true 1
+SELECT 1 = 2; -- false 0
+SELECT 1 = '1'; -- true 1
 
 
 
