@@ -9,6 +9,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
 
+<script>
+	$(document).ready(function() {
+		$(".delete-button").click(function(e) {
+			e.preventDefault();
+			
+			let check = confirm("삭제하시겠습니까??");
+			
+			if (check) {
+				$(this).closest("form").submit();	
+			}
+		});
+	});
+</script>
+
 <title>Insert title here</title>
 </head>
 <body>
@@ -34,7 +48,7 @@
 					
 						<form action="" method="post">
 							<input type="hidden" name="id" value="${emp.id }"/>
-							<button><i class="fa-solid fa-trash-can"></i></button>
+							<button class="delete-button"><i class="fa-solid fa-trash-can"></i></button>
 						
 						</form>
 						
