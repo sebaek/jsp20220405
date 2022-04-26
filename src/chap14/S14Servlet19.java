@@ -77,7 +77,7 @@ public class S14Servlet19 extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		String path = "/WEB-INF/view/chap14/ex12.jsp";
+		String path = "/WEB-INF/view/chap14/ex13.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
 		
 	}
