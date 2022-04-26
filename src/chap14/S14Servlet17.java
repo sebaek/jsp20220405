@@ -86,18 +86,26 @@ public class S14Servlet17 extends HttpServlet {
 		ServletContext application = getServletContext();
 		DataSource ds = (DataSource) application.getAttribute("dbpool");
 
+		int result = 0;
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);) {
 
 			pstmt.setInt(1, Integer.parseInt(id));
 
-			pstmt.executeUpdate();
+			result = pstmt.executeUpdate();
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		String location = "S14Servlet17";
+		
+		if (result == 1) {
+			location += "?success=true";
+		} else {
+			location += "?success=false";
+		}
+		
 		response.sendRedirect(location);
 
 	}
