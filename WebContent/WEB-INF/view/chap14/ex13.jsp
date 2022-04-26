@@ -81,28 +81,14 @@
 				
 				<!-- nav>ul.pagination>li.page-item*7>a.page-link -->
 				<nav>
-					<ul class="pagination">
-						<li class="page-item">
-							<a href="S14Servlet19?page=1" class="page-link">1</a>
-						</li>
-						<li class="page-item">
-							<a href="S14Servlet19?page=2" class="page-link">2</a>
-						</li>
-						<li class="page-item">
-							<a href="S14Servlet19?page=3" class="page-link">3</a>
-						</li>
-						<li class="page-item">
-							<a href="S14Servlet19?page=4" class="page-link">4</a>
-						</li>
-						<li class="page-item">
-							<a href="S14Servlet19?page=5" class="page-link">5</a>
-						</li>
-						<li class="page-item">
-							<a href="S14Servlet19?page=6" class="page-link">6</a>
-						</li>
-						<li class="page-item">
-							<a href="S14Servlet19?page=7" class="page-link">7</a>
-						</li>
+					<ul class="pagination justify-content-center">
+					
+						<c:forEach begin="10" end="17" var="pageNum">
+							<li class="page-item">
+								<a href="S14Servlet19?page=${pageNum }" class="page-link">${pageNum }</a>
+							</li>
+						</c:forEach>
+
 					</ul>
 				</nav>
 			</div>
