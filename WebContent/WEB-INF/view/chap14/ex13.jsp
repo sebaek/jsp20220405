@@ -83,25 +83,25 @@
 				<nav>
 					<ul class="pagination">
 						<li class="page-item">
-							<a href="" class="page-link"></a>
+							<a href="S14Servlet19?page=1" class="page-link">1</a>
 						</li>
 						<li class="page-item">
-							<a href="" class="page-link"></a>
+							<a href="S14Servlet19?page=2" class="page-link">2</a>
 						</li>
 						<li class="page-item">
-							<a href="" class="page-link"></a>
+							<a href="S14Servlet19?page=3" class="page-link">3</a>
 						</li>
 						<li class="page-item">
-							<a href="" class="page-link"></a>
+							<a href="S14Servlet19?page=4" class="page-link">4</a>
 						</li>
 						<li class="page-item">
-							<a href="" class="page-link"></a>
+							<a href="S14Servlet19?page=5" class="page-link">5</a>
 						</li>
 						<li class="page-item">
-							<a href="" class="page-link"></a>
+							<a href="S14Servlet19?page=6" class="page-link">6</a>
 						</li>
 						<li class="page-item">
-							<a href="" class="page-link"></a>
+							<a href="S14Servlet19?page=7" class="page-link">7</a>
 						</li>
 					</ul>
 				</nav>
