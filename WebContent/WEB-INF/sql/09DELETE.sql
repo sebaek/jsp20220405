@@ -16,3 +16,4 @@ DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
 SELECT * FROM Customers WHERE CustomerName='Alfreds Futterkiste';
 
 
+
