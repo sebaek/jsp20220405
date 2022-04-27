@@ -43,3 +43,4 @@ SELECT * FROM Customers ORDER BY CustomerID LIMIT 30, 10;  -- 4페이지
 
 
 
+
