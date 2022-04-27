@@ -27,3 +27,22 @@ HAVING count =
 	LIMIT 1
 )
 ;
+
+-- GROUP BY : 2개 이상의 컬럼 사용 가능
+SELECT * FROM Orders ORDER BY OrderDate;
+
+-- 날짜별 몇개의 주문이 있는지?
+SELECT OrderDate, COUNT(OrderID)
+FROM Orders
+GROUP BY OrderDate
+ORDER BY OrderDate;
+
+-- 날짜별, 직원별로 몇개의 주문이 있는지?
+SELECT OrderDate, EmployeeID, COUNT(OrderID)
+FROM Orders
+GROUP BY OrderDate, EmployeeID
+ORDER BY OrderDate, EmployeeID;
+
+
+
+
