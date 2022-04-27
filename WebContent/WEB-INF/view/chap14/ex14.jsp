@@ -14,6 +14,13 @@
 <body>
 	<h1>고객 목록</h1>
 	
+	<div>
+		<form>
+			이름 검색 <input type="text" name="keyword" value="${param.keyword }"/> 
+			<button><i class="fa-solid fa-magnifying-glass"></i></button>
+		</form>
+	</div>
+	
 	<table class="table">
 		<thead>
 			<tr>

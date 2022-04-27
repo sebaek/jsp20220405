@@ -2,8 +2,8 @@ package chap14;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,29 +36,43 @@ public class S14Servlet20 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String keyword = request.getParameter("keyword");
+		
+		if (keyword == null) {
+			keyword = "";
+		}
+		
+		keyword = keyword.trim();
+		keyword = "%" + keyword + "%";
+		
 		String sql = "SELECT CustomerID, CustomerName, City, Country, PostalCode "
-				+ "FROM Customers ORDER BY CustomerID ";
+				+ "FROM Customers "
+				+ "WHERE CustomerName LIKE ? "
+				+ "ORDER BY CustomerID ";
 		
 		ServletContext application = getServletContext();
 		DataSource ds = (DataSource) application.getAttribute("dbpool");
 		List<Customer> list = new ArrayList<>();
 		
 		try (Connection con = ds.getConnection();
-				Statement stmt = con.createStatement();
-				ResultSet rs = stmt.executeQuery(sql);
+				PreparedStatement stmt = con.prepareStatement(sql);
 				) {
 			
-			while (rs.next()) {
-				Customer c = new Customer();
-				c.setId(rs.getInt(1));
-				c.setName(rs.getString(2));
-				c.setCity(rs.getString(3));
-				c.setCountry(rs.getString(4));
-				c.setPostCode(rs.getString(5));
-				
-				list.add(c);
-			}
+			stmt.setString(1, keyword);
 			
+			try (ResultSet rs = stmt.executeQuery();) {
+				while (rs.next()) {
+					Customer c = new Customer();
+					c.setId(rs.getInt(1));
+					c.setName(rs.getString(2));
+					c.setCity(rs.getString(3));
+					c.setCountry(rs.getString(4));
+					c.setPostCode(rs.getString(5));
+					
+					list.add(c);
+				}
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
