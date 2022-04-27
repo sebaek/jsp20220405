@@ -9,7 +9,7 @@ GROUP BY Country
 
 SELECT Country, COUNT(CustomerID) FROM Customers
 GROUP BY Country
-HAVING COUNT(CustomerID) > 3;   -- HAVING aggregate function 결과를 조건으로 줄 수 있음
+HAVING COUNT(CustomerID) > 3;   -- HAVING : aggregate function 결과를 조건으로 줄 수 있음
 
 SELECT Country, COUNT(CustomerID) count FROM Customers
 GROUP BY Country
