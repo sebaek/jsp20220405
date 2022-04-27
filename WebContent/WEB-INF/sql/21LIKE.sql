@@ -14,5 +14,8 @@ SELECT * FROM Employees WHERE LastName LIKE '%n';
 
 SELECT * FROM Employees WHERE LastName LIKE '%n%';
 
+SELECT * FROM Customers
+WHERE CustomerName NOT LIKE 'a%' ORDER BY CustomerName;
+
 
 
