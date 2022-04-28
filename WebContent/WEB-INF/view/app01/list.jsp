@@ -31,7 +31,7 @@
 							<tr>
 								<td>${board.id }</td>
 								<td>${board.title }</td>
-								<td>${board.inserted }</td>
+								<td>${board.prettyInserted }</td>
 							</tr>
 						</c:forEach>
 					</tbody>
