@@ -51,9 +51,9 @@ VALUES ('a', 'a');
 INSERT INTO MyTable5 (col2)
 VALUES ('0123456789');
 INSERT INTO MyTable5 (col2)
-VALUES ('01234567890'); -- 되는데 짤림
+VALUES ('01234567890'); -- 되는데 짤림 또는 안됨 (주의해서 사용하세요)
 INSERT INTO MyTable5 (col2)
-VALUES ('abcdefghijklmn'); -- 되는데 짤림
+VALUES ('abcdefghijklmn'); -- 되는데 짤림 또는 안됨 (주의해서 사용하세요)
 
 
 
