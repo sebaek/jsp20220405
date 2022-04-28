@@ -7,3 +7,5 @@ CREATE TABLE Board (
     body VARCHAR(2000) NOT NULL,
 	inserted DATETIME NOT NULL DEFAULT NOW()
 );
+
+SELECT * FROM Board;
