@@ -11,5 +11,5 @@ INSERT INTO Mytable8 (col2) VALUES ('2022-04-28 11:12:13');
 SELECT NOW();
 INSERT INTO Mytable8 (col1, col2) VALUE (NOW(), NOW());
 
-
+DESC Mytable8;
 
