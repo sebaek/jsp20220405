@@ -36,7 +36,14 @@ DESC MyTable3;
 
 SELECT * FROM MyTable3;
 
+DESC MyTable1;
+INSERT INTO MyTable1 (colName1, colName2)
+VALUE ('111', '222');
 
+SELECT * FROM MyTable1;
+
+INSERT INTO MyTable1 (colName1, colName2)
+VALUES ('abc', 333);
 
 
 
