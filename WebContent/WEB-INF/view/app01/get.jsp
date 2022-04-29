@@ -24,6 +24,16 @@
 			$("#input1").removeAttr("readonly");
 			$("#textarea1").removeAttr("readonly");
 			$("#modify-submit1").removeClass("d-none");
+			$("#delete-submit1").removeClass("d-none");
+		});
+		
+		$("#delete-submit1").click(function(e) {
+			e.preventDefault();
+			let form1 = $("#form1");
+			let actionAttr = "${appRoot}/board/remove";
+			form1.attr("action", actionAttr);
+			
+			// form1.submit();
 		});
 	});
 </script>
@@ -55,7 +65,7 @@
 					</c:if>
 				</c:if>
 				
-				<form action="${appRoot }/board/modify" method="post">
+				<form id="form1" action="${appRoot }/board/modify" method="post">
 					<input type="hidden" name="id" value="${board.id }"/>
 					
 					<div>
@@ -76,6 +86,7 @@
 					</div> 
 					
 					<button id="modify-submit1" class="btn btn-primary d-none">수정</button>
+					<button id="delete-submit1" class="btn btn-danger d-none">삭제</button>
 				</form>
 					
 			</div>
