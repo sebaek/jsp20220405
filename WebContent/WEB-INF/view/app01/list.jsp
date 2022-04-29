@@ -14,7 +14,7 @@
 </head>
 <body>
 	
-	<my:navBar />
+	<my:navBar current="list" />
 
 	<div class="container">
 		<div class="row">
