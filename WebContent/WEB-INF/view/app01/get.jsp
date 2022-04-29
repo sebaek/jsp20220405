@@ -33,7 +33,7 @@
 			let actionAttr = "${appRoot}/board/remove";
 			form1.attr("action", actionAttr);
 			
-			// form1.submit();
+			form1.submit();
 		});
 	});
 </script>

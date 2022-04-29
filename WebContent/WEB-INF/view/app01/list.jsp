@@ -21,6 +21,19 @@
 			<div class="col">
 				<h1>글 목록</h1>
 				
+				<c:if test="${not empty param.success }">
+					<c:if test="${param.success }">
+						<div class="alert alert-primary">
+							게시물이 삭제되었습니다.
+						</div>
+					</c:if>
+					<c:if test="${not param.success }">
+						<div class="alert alert-danger">
+							게시물 삭제 중 문제 발생하였습니다.
+						</div>
+					</c:if>
+				</c:if>
+				
 				<!-- table.table>thead>tr>th*3^^tbody -->
 				<table class="table">
 					<thead>
