@@ -36,7 +36,7 @@ SET SQL_SAFE_UPDATES = 0;
 UPDATE Board
 SET inserted = DATE_SUB(inserted, INTERVAL 1 DAY);
 
-SELECT * FROM reply;
+SELECT * FROM Reply;
 
 
 
