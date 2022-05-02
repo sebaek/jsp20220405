@@ -8,7 +8,9 @@ CREATE TABLE Board (
 	inserted DATETIME NOT NULL DEFAULT NOW()
 );
 
-CREATE TABLE reply (
+DROP TABLE reply;
+
+CREATE TABLE Reply (
 	id INT PRIMARY KEY AUTO_INCREMENT,
     board_id INT,  -- foreign key(참조키, 외래키)
     content VARCHAR(255) NOT NULL,
@@ -34,7 +36,7 @@ SET SQL_SAFE_UPDATES = 0;
 UPDATE Board
 SET inserted = DATE_SUB(inserted, INTERVAL 1 DAY);
 
-
+SELECT * FROM reply;
 
 
 
