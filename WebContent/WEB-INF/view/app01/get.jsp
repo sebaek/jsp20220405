@@ -149,6 +149,7 @@
 							<div id="replyEditFormContainer${reply.id }" style="display: none;">
 								<form action="${appRoot }/reply/modify" method="post">
 									<div class="input-group">
+										<input type="hidden" name="boardId" value="${board.id }" />
 										<input type="hidden" name="replyId" value="${reply.id }" />
 										<input class="form-control" value="${reply.content }" type="text" name="replyContent" required /> 
 										<button class="btn btn-outline-secondary"><i class="fa-solid fa-comment-dots"></i></button>

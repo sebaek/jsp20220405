@@ -1,6 +1,7 @@
 package app01;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -9,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
+
+import app01.dao.ReplyDao;
+import app01.dto.ReplyDto;
 
 /**
  * Servlet implementation class ReplyModifyServlet
@@ -52,10 +56,21 @@ public class ReplyModifyServlet extends HttpServlet {
 		// request 파라미터 수집 가공
 		String boardIdStr = request.getParameter("boardId"); //jsp에 추가 하세요.
 		String replyIdStr = request.getParameter("replyId");
-		String content = request.getParameter("content"); // jsp와 매칭안됨, 적절히 수정하세요.
+		String content = request.getParameter("replyContent"); // jsp와 매칭안됨, 적절히 수정하세요.
 		
-		// Dao 일시키고
-		dao.update(con, dto);
+		ReplyDto dto = new ReplyDto();
+		dto.setBoardId(Integer.parseInt(boardIdStr));
+		dto.setId(Integer.parseInt(replyIdStr));
+		dto.setContent(content);
+		
+		// bussiness logic 실행(Dao 일시키고)
+		ReplyDao dao = new ReplyDao();
+		
+		try (Connection con = ds.getConnection()) {
+			dao.update(con, dto);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		/*
 		 * 쿼리: 
 		 * 
@@ -69,7 +84,7 @@ public class ReplyModifyServlet extends HttpServlet {
 		// 안해도됨..
 		
 		// forward / redirect
-		String location = "/board/get" + "?" + "id=" + boardIdStr;
+		String location = request.getContextPath() + "/board/get" + "?" + "id=" + boardIdStr;
 		response.sendRedirect(location);
 		
 		
