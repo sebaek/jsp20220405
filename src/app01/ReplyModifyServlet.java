@@ -56,6 +56,14 @@ public class ReplyModifyServlet extends HttpServlet {
 		
 		// Dao 일시키고
 		dao.update(con, dto);
+		/*
+		 * 쿼리: 
+		 * 
+		 * UPDATE Reply
+		 * SET content = ?
+		 * WHERE id = ? 
+		 * 
+		 */
 		
 		// 결과 세팅
 		// 안해도됨..
