@@ -1,6 +1,7 @@
 package app01;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -9,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
+
+import app01.dao.ReplyDao;
+import app01.dto.ReplyDto;
 
 /**
  * Servlet implementation class ReplyInsertServlet
@@ -53,18 +57,32 @@ public class ReplyInsertServlet extends HttpServlet {
 		String content = request.getParameter("replyContent");
 		String boardId = request.getParameter("boardId");
 		
+		ReplyDto replyDto = new ReplyDto();
+		replyDto.setContent(content);
+		replyDto.setBoardId(Integer.parseInt(boardId));
+		
+		
 		// bussiness logic 처리
-		success = dao.insert(con, replyDto);
+		ReplyDao dao = new ReplyDao();
+		boolean success = false;
+		
+		try (Connection con = ds.getConnection()) {
+			success = dao.insert(con, replyDto);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		// 결과 셋팅
+		String location = request.getContextPath() + "/board/get?id=" + replyDto.getBoardId();
 		if (success) {
-			
+			location += "&rs=true";
 		} else {
-			
+			location += "&rs=false";
 		}
 		
 		// forward / redirect
-		
+		response.sendRedirect(location);
 	}
 
 }
