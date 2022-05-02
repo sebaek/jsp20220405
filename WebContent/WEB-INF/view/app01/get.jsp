@@ -115,11 +115,23 @@
 	</div>
 	
 	<%-- 댓글 목록 --%>
-	<ul>
-		<c:forEach items="${replyList }" var="reply">
-			<li>${reply.inserted} : ${reply.content }</li>
-		</c:forEach>
-	</ul>
+	
+	<!-- .container.mt-3>.row>.col -->
+	<div class="container mt-3">
+		<div class="row">
+			<div class="col">
+				<ul class="list-group">
+					<c:forEach items="${replyList }" var="reply">
+						<li class="list-group-item">
+							<div class="fw-bold"><i class="fa-solid fa-comment"></i> ${reply.inserted}</div>
+						 	${reply.content }
+						</li>
+					</c:forEach>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
 </body>
 </html>
 
