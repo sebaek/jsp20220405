@@ -98,7 +98,7 @@
 	</div>
 	
 	
-	<%-- 댓글 --%>
+	<%-- 댓글 추가 form --%>
 	<!-- .container.mt-3>.row>.col>form -->
 	<div class="container mt-3">
 		<div class="row">
@@ -113,6 +113,13 @@
 			</div>
 		</div>
 	</div>
+	
+	<%-- 댓글 목록 --%>
+	<ul>
+		<c:forEach items="${replyList }" var="reply">
+			<li>${reply.inserted} : ${reply.content }</li>
+		</c:forEach>
+	</ul>
 </body>
 </html>
 
