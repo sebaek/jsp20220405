@@ -52,7 +52,7 @@ public class ReplyModifyServlet extends HttpServlet {
 		// request 파라미터 수집 가공
 		String boardIdStr = request.getParameter("boardId"); //jsp에 추가 하세요.
 		String replyIdStr = request.getParameter("replyId");
-		String content = request.getParameter("content");
+		String content = request.getParameter("content"); // jsp와 매칭안됨, 적절히 수정하세요.
 		
 		// Dao 일시키고
 		dao.update(con, dto);
