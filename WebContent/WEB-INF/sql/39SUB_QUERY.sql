@@ -53,5 +53,22 @@ WHERE Country IN (SELECT Country FROM Customers)
 ORDER BY 1;
 
 
+-- leetcode 1587
+
+-- sub query
+SELECT (SELECT name FROM Users u WHERE t.account = u.account) name,
+       SUM(t.amount) balance
+FROM Transactions t
+GROUP BY t.account
+HAVING balance > 10000;
+
+-- JOIN
+SELECT u.name, SUM(t.amount) balance
+FROM Users u JOIN Transactions t 
+   ON u.account = t.account
+GROUP BY u.account
+HAVING balance > 10000;
+
+
 
 
