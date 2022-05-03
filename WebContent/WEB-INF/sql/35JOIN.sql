@@ -22,7 +22,7 @@ FROM Orders
 GROUP BY CustomerID
 ORDER BY 1
 ;
-SELECT c.CustomerID, c.CustomerName, COUNT(o.OrderID)
+SELECT c.CustomerID, c.CustomerName, COUNT(o.OrderID) AS NumOfOrders
 FROM Orders o JOIN Customers c ON o.CustomerID = c.CustomerID
 GROUP BY c.CustomerID
 ORDER BY 3 DESC
