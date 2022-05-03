@@ -8,3 +8,13 @@ FROM Customers c LEFT JOIN Orders o ON c.CustomerID = o.CustomerID
 WHERE o.OrderID IS NULL
 ORDER BY 1
 ; 
+
+-- 고객별 주문 건수 with 0건도 나와야함
+SELECT c.CustomerName, COUNT(o.OrderID)
+FROM Customers c LEFT JOIN Orders o
+ON c.CustomerID = o.CustomerID
+GROUP BY c.CustomerID
+ORDER BY 2 DESC;
+
+
+
