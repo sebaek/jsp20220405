@@ -43,7 +43,14 @@ ORDER BY 1;
  
 -- Suppliers, Customers 
 -- 고객과 공급자가 모두 있는 나라 조회 (JOIN, SUBQUERY)
+SELECT DISTINCT s.Country
+FROM Suppliers s JOIN Customers c ON s.Country = c.Country
+ORDER BY 1;
 
+SELECT DISTINCT Country
+FROM Suppliers 
+WHERE Country IN (SELECT Country FROM Customers)
+ORDER BY 1;
 
 
 
