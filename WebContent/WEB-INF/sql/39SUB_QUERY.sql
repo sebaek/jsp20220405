@@ -69,6 +69,18 @@ FROM Users u JOIN Transactions t
 GROUP BY u.account
 HAVING balance > 10000;
 
+-- leetcode 1407
+# sub query
+ SELECT name, 
+       IFNULL((SELECT SUM(distance) FROM Rides WHERE user_id = Users.id), 0) travelled_distance
+ FROM Users
+ ORDER BY 2 DESC, 1;
 
+# join
+SELECT u.name,
+       SUM(IFNULL(r.distance, 0)) travelled_distance
+FROM Users u LEFT JOIN Rides r ON u.id = r.user_id
+GROUP BY u.id
+ORDER BY 2 DESC, 1;
 
 
