@@ -28,9 +28,14 @@ SELECT c.CustomerName,
 FROM Customers c
 ORDER BY 1;
 
+-- 상품명과 카테고리명 조회
+-- JOIN
+SELECT p.ProductName, c.CategoryName
+FROM Products p JOIN Categories c
+   ON p.CategoryID = c.CategoryID
+ORDER BY 1;
 
-
-
+-- SUBQUERY
 
 
 
