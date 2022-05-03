@@ -78,9 +78,9 @@ public class BoardDao {
 	}
 
 	public BoardDto get(Connection con, int id) {
-		String sql = "SELECT id, title, body, inserted "
-				+ "FROM Board "
-				+ "WHERE id = ?";
+		String sql = "SELECT b.id, b.title, b.body, b.inserted, COUNT(r.id) numOfReply "
+				+ "FROM Board b LEFT JOIN Reply r ON b.id = r.board_id "
+				+ "WHERE b.id = ?";
 		
 		try (PreparedStatement stmt = con.prepareStatement(sql);) {
 			
@@ -93,6 +93,7 @@ public class BoardDao {
 					board.setTitle(rs.getString(2));
 					board.setBody(rs.getString(3));
 					board.setInserted(rs.getTimestamp(4).toLocalDateTime());
+					board.setNumOfReply(rs.getInt(5));
 					
 					return board;
 				}
