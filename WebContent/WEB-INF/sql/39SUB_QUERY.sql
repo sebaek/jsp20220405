@@ -72,7 +72,10 @@ HAVING balance > 10000;
 -- leetcode 1407
 # sub query
  SELECT name, 
-       IFNULL((SELECT SUM(distance) FROM Rides WHERE user_id = Users.id), 0) travelled_distance
+       IFNULL((SELECT SUM(distance) 
+               FROM Rides 
+               WHERE user_id = Users.id
+               GROUP BY user_id), 0) travelled_distance
  FROM Users
  ORDER BY 2 DESC, 1;
 
@@ -83,4 +86,17 @@ FROM Users u LEFT JOIN Rides r ON u.id = r.user_id
 GROUP BY u.id
 ORDER BY 2 DESC, 1;
 
+-- 1965
+SELECT e.employee_id
+FROM Employees e LEFT JOIN Salaries s
+  ON e.employee_id = s.employee_id
+WHERE s.employee_id IS NULL
 
+UNION
+
+SELECT s.employee_id
+FROM Employees e RIGHT JOIN Salaries s
+  ON e.employee_id = s.employee_id
+WHERE e.employee_id IS NULL
+
+ORDER BY 1;
