@@ -13,3 +13,12 @@ Products p JOIN Categories c
 ON p.CategoryID = c.CategoryID
 GROUP BY c.CategoryID
 ;
+
+-- 고객별 주문 건수
+-- 조회컬럼명(고객명, 주문수)
+-- 단, 주문하지 않은 고객은 나오지 않음
+
+
+
+
+
