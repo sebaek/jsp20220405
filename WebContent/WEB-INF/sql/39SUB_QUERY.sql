@@ -36,6 +36,13 @@ FROM Products p JOIN Categories c
 ORDER BY 1;
 
 -- SUBQUERY
+SELECT p.ProductName, 
+      (SELECT CategoryName FROM Categories c WHERE c.CategoryID = p.CategoryID) CategoryName
+FROM Products p
+ORDER BY 1;
+ 
+-- Suppliers, Customers 
+-- 고객과 공급자가 모두 있는 나라 조회 (JOIN, SUBQUERY)
 
 
 
