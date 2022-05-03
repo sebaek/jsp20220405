@@ -14,7 +14,7 @@ SELECT c.CustomerName, COUNT(o.OrderID)
 FROM Customers c LEFT JOIN Orders o
 ON c.CustomerID = o.CustomerID
 GROUP BY c.CustomerID
-ORDER BY 2 DESC;
+ORDER BY 2 DESC, 1;
 
 
 
