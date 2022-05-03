@@ -26,6 +26,18 @@ FROM Products p
 JOIN Suppliers s 
 ON p.SupplierID = s.SupplierID;
 
+--
+DESC Customers;
+DESC Suppliers;
+
+-- 고객과, 공급자가 모두 있는 나라를 조회해라
+SELECT DISTINCT Country FROM Customers; -- 고객이 있는 나라들
+SELECT DISTINCT Country FROM Suppliers; -- 공급자가 있는 나라들
+
+SELECT * FROM Customers c JOIN Suppliers s ON c.Country = s.Country ORDER BY c.Country;
+SELECT DISTINCT c.Country FROM Customers c JOIN Suppliers s ON c.Country = s.Country ORDER BY c.Country;
+SELECT DISTINCT s.Country FROM Customers c JOIN Suppliers s ON c.Country = s.Country ORDER BY 1;
+
 
 
 
