@@ -14,3 +14,9 @@ SELECT CustomerName
 FROM Customers
 WHERE CustomerID NOT IN (SELECT CustomerID FROM Orders)
 ORDER BY 1;
+
+
+
+-- 고객별 주문 수 (JOIN, SUB QUERY)
+
+
