@@ -27,11 +27,21 @@ CREATE TABLE toy (
 );
 
 CREATE TABLE toy_color (
+
 	toy_id INT,
     color VARCHAR(255),
     FOREIGN KEY (toy_id) REFERENCES toy(toy_id),
     PRIMARY KEY (toy_id, color)
 );
+
+DROP TABLE toy_color;
+CREATE TABLE toy_color (
+    toy_color_id INT PRIMARY KEY AUTO_INCREMENT,
+	toy_id INT,
+    color VARCHAR(255),
+    FOREIGN KEY (toy_id) REFERENCES toy(toy_id)
+);
+
 
 
 
