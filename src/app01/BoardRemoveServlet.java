@@ -69,6 +69,10 @@ public class BoardRemoveServlet extends HttpServlet {
 			con.setAutoCommit(false);
 			
 			replyDao.deleteByBoardId(con, id);
+			
+//			int i = 0;
+//			int j = 3 / i; // ArithmeticException
+			
 			success = dao.delete(con, id);
 			
 			con.commit();
