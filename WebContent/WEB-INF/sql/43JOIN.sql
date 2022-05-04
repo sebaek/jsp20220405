@@ -38,7 +38,7 @@ WHERE o.OrderDate = '1996-07-04';
 -- Orders, OrderDetails, Products, Customers
 SELECT * FROM Orders WHERE OrderDate = '1996-07-08';
 
-SELECT o.OrderDate, c.CustomerName, p.ProductName, sum((p.Price * d.Quantity)) '총계'
+SELECT o.OrderDate, c.CustomerName, sum(p.Price * d.Quantity) '총계'
 FROM Orders o JOIN OrderDetails d ON o.OrderID = d.OrderID
               JOIN Products p ON d.ProductID = p.ProductID
               JOIN Customers c ON o.CustomerID = c.CustomerID
