@@ -46,6 +46,20 @@ WHERE o.OrderDate = '1996-07-08'
 GROUP BY c.CustomerID
 ;
 
+-- 1996년 가장 많은 주문을 받은 직원
+-- 1996년 직원별 처리한 주문 총 금액을 조회(금액이 높은 -> 낮은)
+SELECT * FROM Orders WHERE OrderDate BETWEEN '1996-01-01' AND '1996-12-31';
+SELECT COUNT(*) FROM Orders;
+
+-- Employees, Orders, OrdersDetails, Products
+SELECT CONCAT(e.FirstName, ' ', e.LastName) Name, SUM(p.Price * d.Quantity) total
+FROM Employees e JOIN Orders o ON e.EmployeeID = o.EmployeeID
+                 JOIN OrderDetails d ON d.OrderID = o.OrderID
+				 JOIN Products p ON d.ProductID = p.ProductID
+WHERE o.OrderDate BETWEEN '1996-01-01' AND '1996-12-31'
+GROUP BY e.EmployeeID
+ORDER BY 2 DESC
+;
 
 
 
