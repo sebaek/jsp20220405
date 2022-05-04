@@ -29,6 +29,23 @@ WHERE o.OrderDate = '1996-07-08';
 
 -- 1996-07-04에 주문한 상품명(들)
 -- OrderDetails, Orders, Products
+SELECT o.OrderDate, p.ProductName, d.Quantity, p.Price, (d.Quantity * p.Price) total
+FROM OrderDetails d JOIN Orders o ON d.OrderID = o.OrderID
+                    JOIN Products p ON d.ProductID = p.ProductID
+WHERE o.OrderDate = '1996-07-04';
+
+-- 1996-07-08에 각 고객의 주문 총액
+-- Orders, OrderDetails, Products, Customers
+SELECT * FROM Orders WHERE OrderDate = '1996-07-08';
+
+SELECT o.OrderDate, c.CustomerName, p.ProductName, sum((p.Price * d.Quantity)) '총계'
+FROM Orders o JOIN OrderDetails d ON o.OrderID = d.OrderID
+              JOIN Products p ON d.ProductID = p.ProductID
+              JOIN Customers c ON o.CustomerID = c.CustomerID
+WHERE o.OrderDate = '1996-07-08'
+GROUP BY c.CustomerID
+;
+
 
 
 
