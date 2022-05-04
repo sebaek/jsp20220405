@@ -62,6 +62,33 @@ ORDER BY 2 DESC
 ;
 
 
+-- 카테고리별 판매수량 (높-낮) 전체기간
+-- Categories, OrderDetails, Products
+SELECT c.CategoryID, c.CategoryName, SUM(d.Quantity) Total
+FROM Categories c JOIN Products p ON c.CategoryID = p.CategoryID
+                  JOIN OrderDetails d ON p.ProductID = d.ProductID
+GROUP BY c.CategoryID
+ORDER BY Total DESC;
+
+-- '1996년 7월' 
+SELECT c.CategoryID, c.CategoryName, SUM(IFNULL(d.Quantity, 0)) Total
+FROM Categories c LEFT JOIN Products p ON c.CategoryID = p.CategoryID
+                  LEFT JOIN OrderDetails d ON p.ProductID = d.ProductID
+                  LEFT JOIN Orders o ON d.OrderID = o.OrderID
+WHERE o.OrderDate BETWEEN '1996-08-01' AND '1996-08-07'
+GROUP BY c.CategoryID
+ORDER BY Total DESC;
+
+SELECT c.CategoryID, c.CategoryName, SUM(IFNULL(d.Quantity, 0)) Total
+FROM Orders o JOIN OrderDetails d ON d.OrderID = o.OrderID
+                  JOIN Products p ON p.ProductID = d.ProductID
+                  RIGHT JOIN Categories c ON c.CategoryID = p.CategoryID
+WHERE o.OrderDate BETWEEN '1996-08-01' AND '1996-08-07'
+GROUP BY c.CategoryID
+ORDER BY Total DESC;
+
+
+
 
 
 
