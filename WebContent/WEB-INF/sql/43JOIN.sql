@@ -27,6 +27,9 @@ FROM Orders o JOIN Customers c ON o.CustomerID = c.CustomerID
               JOIN Shippers s ON o.ShipperID = s.ShipperID
 WHERE o.OrderDate = '1996-07-08';
 
+-- 1996-07-04에 주문한 상품명(들)
+-- OrderDetails, Orders, Products
+
 
 
 
