@@ -81,9 +81,9 @@ ORDER BY Total DESC;
 
 SELECT c.CategoryID, c.CategoryName, SUM(IFNULL(d.Quantity, 0)) Total
 FROM Orders o JOIN OrderDetails d ON d.OrderID = o.OrderID
-                  JOIN Products p ON p.ProductID = d.ProductID
-                  RIGHT JOIN Categories c ON c.CategoryID = p.CategoryID
-WHERE o.OrderDate BETWEEN '1996-08-01' AND '1996-08-07'
+							          AND o.OrderDate BETWEEN '1996-08-01' AND '1996-08-07'
+			  JOIN Products p ON p.ProductID = d.ProductID
+			  RIGHT JOIN Categories c ON c.CategoryID = p.CategoryID              
 GROUP BY c.CategoryID
 ORDER BY Total DESC;
 
